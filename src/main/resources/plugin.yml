@@ -1,0 +1,8 @@
+name: TownyItemLore
+version: '0.1'
+description: A Towny addon plugin that generates historical lore about certain items when they are crafted!
+main: net.earthmc.townyitemlore.TownyItemLore
+api-version: '1.19'
+depend: [ Towny ]
+author: CorruptedGreed
+folia-supported: true
