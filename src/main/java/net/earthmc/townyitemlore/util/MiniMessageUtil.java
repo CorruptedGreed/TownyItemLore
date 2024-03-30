@@ -14,7 +14,7 @@ public class MiniMessageUtil {
     public static List<Component> generateLore(Player player) {
         List<Component> lore = new ArrayList<>();
         MiniMessage miniMessage = MiniMessage.builder().build();
-        lore.add(miniMessage.deserialize("<!i><dark_gray>Historical Information"));
+        lore.add(miniMessage.deserialize("<dark_gray>Historical Information"));
         lore.add(miniMessage.deserialize("<!i><yellow>Forged by: " + player.getName()));
         if (!TownyAPI.getInstance().isTownyWorld(player.getWorld())) {
             lore.add(miniMessage.deserialize("<!i><yellow>Origin: Unknown"));
