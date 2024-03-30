@@ -14,26 +14,26 @@ public class MiniMessageUtil {
     public static List<Component> generateLore(Player player) {
         List<Component> lore = new ArrayList<>();
         MiniMessage miniMessage = MiniMessage.builder().build();
-        lore.add(miniMessage.deserialize("<reset><dark_gray>Historical Information"));
-        lore.add(miniMessage.deserialize("<reset><yellow>Forged by: " + player.getName()));
+        lore.add(miniMessage.deserialize("<!i><dark_gray>Historical Information"));
+        lore.add(miniMessage.deserialize("<!i><yellow>Forged by: " + player.getName()));
         if (!TownyAPI.getInstance().isTownyWorld(player.getWorld())) {
-            lore.add(miniMessage.deserialize("<reset><yellow>Origin: Unknown"));
+            lore.add(miniMessage.deserialize("<!i><yellow>Origin: Unknown"));
         }
         Town town = TownyAPI.getInstance().getTown(player.getLocation());
         if (TownyAPI.getInstance().isWilderness(player.getLocation())) {
-            lore.add(miniMessage.deserialize("<reset><yellow>Origin: Wilderness"));
+            lore.add(miniMessage.deserialize("<!i><yellow>Origin: Wilderness"));
         }
         else {
             assert town != null;
             Nation nation = town.getNationOrNull();
             if (nation == null) {
-                lore.add(miniMessage.deserialize("<reset><yellow>Origin: Town of " + town.getName()));
+                lore.add(miniMessage.deserialize("<!i><yellow>Origin: Town of " + town.getName()));
             }
             else {
-                lore.add(miniMessage.deserialize("<reset><yellow>Origin: Nation of " + nation.getName() + ", Town of " + town.getName()));
+                lore.add(miniMessage.deserialize("<!i><yellow>Origin: Nation of " + nation.getName() + ", Town of " + town.getName()));
             }
         }
-        lore.add(miniMessage.deserialize("<yellow>Date: " + String.valueOf(TimeUtil.formattedDate)));
+        lore.add(miniMessage.deserialize("<!i>Date: " + (TimeUtil.formattedDate)));
         return lore;
     }
 }
