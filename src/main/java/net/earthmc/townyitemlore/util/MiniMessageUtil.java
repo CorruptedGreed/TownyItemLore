@@ -27,13 +27,13 @@ public class MiniMessageUtil {
             assert town != null;
             Nation nation = town.getNationOrNull();
             if (nation == null) {
-                lore.add(miniMessage.deserialize("<!i><yellow>Origin: Town of " + town.getName()));
+                lore.add(miniMessage.deserialize("<!i><yellow>Origin: <gray>[<dark_aqua>" + town.getName() + "<gray>]"));
             }
             else {
-                lore.add(miniMessage.deserialize("<!i><yellow>Origin: Nation of " + nation.getName() + ", Town of " + town.getName()));
+                lore.add(miniMessage.deserialize("<!i><yellow>Origin: <gray>[<gold>" + nation.getName() + "<gray>|<dark_aqua>" + town.getName() + "<gray>]"));
             }
         }
-        lore.add(miniMessage.deserialize("<!i>Date: " + (TimeUtil.formattedDate)));
+        lore.add(miniMessage.deserialize("<!i><yellow>Date: " + (TimeUtil.formattedDate)));
         return lore;
     }
 }
