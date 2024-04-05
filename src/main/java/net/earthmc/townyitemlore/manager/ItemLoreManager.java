@@ -1,7 +1,7 @@
 package net.earthmc.townyitemlore.manager;
 
 import net.earthmc.townyitemlore.util.MaterialUtil;
-import net.earthmc.townyitemlore.util.MiniMessageUtil;
+import net.earthmc.townyitemlore.util.LoreUtil;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -15,7 +15,7 @@ public class ItemLoreManager {
         Material itemType = itemStack.getType();
         if (MaterialUtil.targetMaterials.contains(itemType)) {
             ItemMeta meta = itemStack.getItemMeta();
-            List<Component> lore = MiniMessageUtil.generateLore(player);
+            List<Component> lore = LoreUtil.generateLore(player);
             meta.lore(lore);
             itemStack.setItemMeta(meta);
         }
